@@ -1,1 +1,57 @@
-<p>register works!</p>
+<form autocomplete="on" 
+      [formGroup]="miFormulario" 
+      (ngSubmit)="registro()">
+  <div
+    class="d-flex flex-row align-items-center justify-content-center justify-content-lg-center">
+    <h2 class="lead fw-bold mb-0 me-3">Nuevo usuario</h2>
+  </div><hr />
+
+  <!-- Name input -->
+  <div class="form-outline mb-4">
+    <label>Nombre usuario</label>
+    <input
+      type="name"
+      class="form-control form-control-lg"
+      formControlName="name"
+      placeholder="Ingrese su nombre"
+    />
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <label>Correo electrónico</label>
+    <input
+      type="email"
+      class="form-control form-control-lg"
+      formControlName="email"
+      placeholder="Ingrese su correo "
+    />
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-3">
+    <label>Contraseña</label>
+    <input
+      type="password"
+      class="form-control form-control-lg"
+      formControlName="password"
+      placeholder="Ingrese su contraseña"
+    />
+  </div>
+
+  <div class="text-center text-lg-center mt-4 pt-2">
+    <button
+      type="button"
+      class="btn btn-primary bg-opacity-35 btn-lg"
+      style="padding-left: 2.5rem; padding-right: 2.5rem"
+      type="submit"
+      [disabled]="miFormulario.invalid">
+      Registrar
+    </button>
+
+    <p class="small fw-bold mt-2 pt-1 mb-0">
+      ¿Ya tienes cuenta?
+      <a routerLink="/auth/login" class="link-info">Ingresa aquí</a>
+    </p>
+  </div>
+</form>
