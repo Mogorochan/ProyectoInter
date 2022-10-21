@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,7 +21,7 @@ export class LoginComponent{
               private authService: AuthService) { }
 
   login(){
-    console.log(this.miFormulario.value);
+    
     const {email, password} = this.miFormulario.value;
 
     this.authService.login(email, password)
@@ -30,7 +30,7 @@ export class LoginComponent{
       if (ok === true ) {
         this.router.navigateByUrl('/rotacion');
       } else {
-        
+        Swal.fire('Error', ok, 'error');
       }
     });
   }
