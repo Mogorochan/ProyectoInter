@@ -14,13 +14,31 @@ import { Auth, AuthResponse } from '../interfaces/auth.interfaces';
 export class AuthService {
 
   private baseUrl: string = environment.baseUrl;
-  private _auth!: Auth 
-
+  private _auth!: Auth;
+  
+//información del usuario que imprimo en el navbar
   get auth(){
     return {...this._auth}
   }
 
   constructor(private http: HttpClient) {}
+
+  registro(name:string, email: string, password: string){
+
+    const url = `${this.baseUrl}/auth/new`;
+    const body = {name, email, password};
+
+    return this.http.post<AuthResponse>(url, body)
+    .pipe(
+      tap(({ok, token}) => {
+        if (ok) {
+          localStorage.setItem('token',token!);
+        }
+      }),
+      map(resp => resp.ok),
+      catchError(err => of(err.error.msg) )
+    );
+  }
 
 
   login(email: string, password: string){

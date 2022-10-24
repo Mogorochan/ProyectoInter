@@ -10,11 +10,6 @@ import { AuthService } from 'src/app/auth/services/auth.service';
       .spacer {
         flex: auto;
       }
-
-      img {
-        width: 100%;
-        border-radius: 5px;
-      }
     `,
   ],
 })
@@ -24,11 +19,13 @@ export class MainComponent implements OnInit {
     return this.authService.auth;
   }
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, 
+              private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   logout() {
     this.router.navigate(['./auth']);
+    this.authService.logout();
   }
 }
