@@ -28,7 +28,7 @@ export class RegisterComponent {
     this.authService.registro(name, email, password)
     .subscribe((ok) => {
       if (ok === true) {
-        this.router.navigateByUrl('/rotacion');
+        this.router.navigateByUrl('/rotacion/listado');
         Swal.fire({
           position: 'center',
           icon: 'success',
