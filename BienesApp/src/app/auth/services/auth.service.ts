@@ -40,7 +40,7 @@ export class AuthService {
     );
   }
 
-  validarToken() {
+  validarToken(): Observable<boolean> {
     const url = `${this.baseUrl}/auth/renew`;
     const headers = new HttpHeaders()
       .set('x-token', localStorage.getItem('token') || '');

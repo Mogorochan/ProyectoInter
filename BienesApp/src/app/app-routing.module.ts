@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidarTokenGuard } from './guard/validar-token.guard';
 
 const routes: Routes = [
   {
@@ -8,7 +9,9 @@ const routes: Routes = [
   },
   {
     path: 'rotacion',
-    loadChildren: () => import('./rotacion/rotacion.module').then(m => m.RotacionModule)
+    loadChildren: () => import('./rotacion/rotacion.module').then(m => m.RotacionModule),
+    canActivate: [ ValidarTokenGuard],
+    canLoad: [ValidarTokenGuard]
   },
   {
     path: 'graficas',
