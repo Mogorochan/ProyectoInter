@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Rotacion } from '../../interfaces/rotacion';
 import { RotacionService } from '../../services/rotacion.service';
 
@@ -11,13 +11,15 @@ import { RotacionService } from '../../services/rotacion.service';
 })
 export class ListadoComponent implements OnInit {
 
-  rotacion: Rotacion[] = [];
+  @Input() listarRotacion!: Rotacion;
+
+  rotaciones: Rotacion[] = [];
 
   constructor( private rotacionService: RotacionService) { }
 
   ngOnInit(): void {
     this.rotacionService.getRotacion()
-    .subscribe(lRotacion => this.rotacion = lRotacion);
+    .subscribe(lRotacion => this.rotaciones = lRotacion);
   }
 
 }

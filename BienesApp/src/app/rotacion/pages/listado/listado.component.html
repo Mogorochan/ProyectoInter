@@ -1,6 +1,25 @@
 <h2>Indicador de rotación</h2>
 <mat-divider></mat-divider>
 
-<ul>
-    <li>1</li>
-</ul>
+<div fxLayout="row wrap" 
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px">
+
+    <div fxFlex="20"
+        fxFlex.lg="15"
+        fxFlex.sm="30"
+        *ngFor="let listarRotacion of rotaciones ">
+    </div>
+</div>
+<mat-card >
+    <mat-card-header>
+        <mat-card-title>Tyu</mat-card-title> 
+    </mat-card-header>
+
+    <mat-card-content>
+        <p>
+            <strong>Periodo: </strong>
+        </p>
+    </mat-card-content>
+</mat-card>
