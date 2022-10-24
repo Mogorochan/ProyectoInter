@@ -17,7 +17,8 @@ app.use(express.json());
 
 
 //Rutas
-app.use('/api/auth', require('./routes/auth.routes')); 
+app.use('/api/auth', require('./routes/auth.routes'));
+app.use('/api/rotacion', require('./routes/rotacion.routes'));
 
 //Puerto y conexión al servidor
 const Port = process.env.Port || 3000

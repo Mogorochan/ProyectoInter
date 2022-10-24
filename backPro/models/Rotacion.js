@@ -22,8 +22,7 @@ const RotacionSchema = Schema({
     required: true,
   },
   resultado: {
-    type: Number,
-    required: true,
+    type: Number
   },
   meta: {
     type: Number
