@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Rotacion } from '../../interfaces/rotacion';
+import { RotacionService } from '../../services/rotacion.service';
+
 
 @Component({
   selector: 'app-listado',
@@ -8,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
 
-  constructor() { }
+  rotacion: Rotacion[] = [];
+
+  constructor( private rotacionService: RotacionService) { }
 
   ngOnInit(): void {
+    this.rotacionService.getRotacion()
+    .subscribe(lRotacion => this.rotacion = lRotacion);
   }
 
 }
