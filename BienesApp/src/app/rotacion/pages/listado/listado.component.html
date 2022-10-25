@@ -14,7 +14,7 @@
 </div>
 <mat-card >
     <mat-card-header>
-        <mat-card-title>Tyu</mat-card-title> 
+        <mat-card-title>Hoja de vida de indicadores</mat-card-title> 
     </mat-card-header>
 
     <mat-card-content>
@@ -22,4 +22,13 @@
             <strong>Periodo: </strong>
         </p>
     </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-button 
+        color="accent" mat-icon-button
+        [routerLink]="['/rotacion/editar']">
+        <mat-icon>edit_square</mat-icon>
+            Editar
+        </button>
+    </mat-card-actions>
 </mat-card>

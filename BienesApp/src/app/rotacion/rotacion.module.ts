@@ -7,13 +7,17 @@ import { RotacionRoutingModule } from './rotacion-routing.module';
 import { MainComponent } from './pages/main/main.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { ConfirmarComponent } from './components/confirmar/confirmar.component';
+import { AgregarComponent } from './pages/agregar/agregar.component';
+import { BuscarComponent } from './pages/buscar/buscar.component';
 
 
 @NgModule({
   declarations: [
     MainComponent,
     ListadoComponent,
-    ConfirmarComponent
+    ConfirmarComponent,
+    AgregarComponent,
+    BuscarComponent
   ],
   imports: [
     CommonModule,
