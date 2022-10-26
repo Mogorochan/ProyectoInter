@@ -11,15 +11,12 @@ import { RotacionService } from '../../services/rotacion.service';
 })
 export class ListadoComponent implements OnInit {
 
-  @Input() listarRotacion!: Rotacion;
-
-  rotaciones: Rotacion[] = [];
-
+  get rotacion(){
+    return {...this.rotacionService.rotacion}
+  }
   constructor( private rotacionService: RotacionService) { }
 
-  ngOnInit(): void {
-    this.rotacionService.getRotacion()
-    .subscribe(lRotacion => this.rotaciones = lRotacion);
-  }
+  ngOnInit(): void {}
+
 
 }

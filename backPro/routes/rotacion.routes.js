@@ -6,7 +6,7 @@ const { validarCampos } = require('../middlewares/validar-campos');
 
 const router = Router();
 
-router.post('/listado', [
+router.post('/agregar', [
     check('periodo', 'El periodo es obligatorio').not().isEmpty(),
     check('ingreso', 'El ingreso es obligatorio').not().isEmpty().isLength({min: 1}),
     check('retiro', 'El retiro es obligatorio').not().isEmpty().isLength({min: 1}),
@@ -14,5 +14,7 @@ router.post('/listado', [
     check('personalFinal', 'El personal final es obligatorio').not().isEmpty().isLength({min: 1}),
     validarCampos
 ], crearListado);
+
+router.get('/listado')
 
 module.exports = router;
