@@ -10,11 +10,13 @@ import { Rotacion } from '../interfaces/rotacion';
 export class RotacionService {
 
   private baseUrl: String = environment.baseUrl;
-  private _rotacion!: Rotacion;
-
+ 
   constructor(private http: HttpClient) { }
 
-  get rotacion(){
-    return {...this._rotacion}
+  getLrotacion(): Observable<Rotacion[]>{
+    return this.http.get<Rotacion[]>(`${this.baseUrl}/rotacion/listado`);
   }
+  
+
+
 }

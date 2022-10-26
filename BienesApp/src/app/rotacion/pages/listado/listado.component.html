@@ -9,17 +9,17 @@
     <div fxFlex="20"
         fxFlex.lg="15"
         fxFlex.sm="30"
-     >
+        >
     </div>
-</div>
+
 <mat-card >
     <mat-card-header>
         <mat-card-title>Hoja de vida de indicadores</mat-card-title> 
     </mat-card-header>
     
     <mat-card-content>
-        <p>
-            <strong>Periodo: {{rotacion.periodo}} </strong>
+        <p *ngFor="let listaRotacion of rotaciones">
+            <strong>{{listaRotacion.periodo}} </strong>
            
         </p>
     </mat-card-content>
@@ -33,3 +33,4 @@
         </button>
     </mat-card-actions>
 </mat-card>
+</div>

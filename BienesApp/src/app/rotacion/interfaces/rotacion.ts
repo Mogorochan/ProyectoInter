@@ -1,6 +1,6 @@
 export interface Rotacion {
     id?:             string;
-    periodo?:        Date;
+    periodo?:        string;
     ingreso?:        number;
     retiro?:         number;
     personalInicio?: number;
@@ -8,5 +8,6 @@ export interface Rotacion {
     resultado?:      number;
     meta?:           number;
 
-
 }
+
+
