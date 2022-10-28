@@ -28,19 +28,11 @@ const crearListado = async(req,res = response)=>{
 
 }
 
-const mostraRotacion = async(req,res = response)=>{
+const mostraRotacion = async(req,res = response)=>{}
     
 
-    const dbRotacion = await Rotacion.findById(id);
-    return res.status(201).json({
-        ok: true,
-        uid: dbRotacion.id,
-        periodo,ingreso,retiro, 
-        personalInicio,personalFinal, 
-        resultado,meta,
-        msg: 'Creación exitosa'
-    })
-}
+   
+   
 
 module.exports = {
     crearListado,

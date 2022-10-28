@@ -14,7 +14,8 @@ export class RotacionService {
   constructor(private http: HttpClient) { }
 
   getLrotacion(): Observable<Rotacion[]>{
-    return this.http.get<Rotacion[]>(`${this.baseUrl}/rotacion/listado`);
+    //return this.http.get<Rotacion[]>(`${this.baseUrl}/rotacion/listado`);
+    return this.http.get<Rotacion[]>('http://localhost:3000/api/rotacion/listado');
   }
   
 
