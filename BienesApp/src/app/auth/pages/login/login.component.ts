@@ -28,7 +28,7 @@ export class LoginComponent{
     .subscribe( ok => {
       
       if (ok === true ) {
-        this.router.navigateByUrl('/rotacion/listado');
+        this.router.navigateByUrl('/rotacion');
       } else {
         Swal.fire('Error', ok, 'error');
       }
