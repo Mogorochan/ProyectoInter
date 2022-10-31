@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
-const {crearListado, mostraRotacion} = require('../controllers/rotacion.controllers');
+const {crearListado, mostraRotacion, actualizarRotacion} = require('../controllers/rotacion.controllers');
 const { validarCampos } = require('../middlewares/validar-campos');
 
 
@@ -15,7 +15,8 @@ router.post('/agregar', [
     validarCampos
 ], crearListado);
 
-router.get('/listado', mostraRotacion)
+router.get('/', mostraRotacion);
+router.put('/:id', actualizarRotacion)
 
 module.exports = router;
 

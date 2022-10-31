@@ -25,10 +25,10 @@ export class ListadoComponent{
                 private fb: FormBuilder,
                 private router: Router ) { }
 
-  // ngOnInit(): void {
-  //   this.rotacionService.getLrotacion()
-  //   .subscribe(lRotaciones => this.rotaciones = lRotaciones);
-  // }
+  ngOnInit(): void {
+    this.rotacionService.getLrotacion()
+    .subscribe(lRotaciones => this.rotaciones = lRotaciones);
+  }
 
 
 }

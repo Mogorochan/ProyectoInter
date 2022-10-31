@@ -18,7 +18,7 @@ export class RotacionService {
     //return this.http.get<Rotacion[]>('http://localhost:3000/api/rotacion/listado');
   }
   agregarHeroe( rotacion: Rotacion ): Observable<Rotacion> {
-    return this.http.post<Rotacion>(`${ this.baseUrl}/heroes`, rotacion );
+    return this.http.post<Rotacion>(`${ this.baseUrl}/rotacion`, rotacion );
   }
 
 

@@ -22,13 +22,42 @@ const crearListado = async(req,res = response)=>{
         console.log(error);
         return res.status(500).json({
             ok: false,
-            msg: '¡Algo falló!'
+            msg: '¡imposible crear'
         })
     }
 
 }
 
-const mostraRotacion = async(req,res = response)=>{}
+const mostraRotacion = async(req,res = response)=>{
+    
+    try {
+
+        const dbRotacion =  await Rotacion.find();
+        res.json(dbRotacion)
+        
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            ok: false,
+            msg: 'Imposible enlistar'
+        })
+    }
+}
+
+const actualizarRotacion = async(req,res = response)=>{
+    try {
+        const {periodo,ingreso, retiro, personalInicio, personalFinal, resultado, meta} = req.body
+        const dbRotacion = await Rotacion.findById(req.params.id);
+        
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            ok: false,
+            msg: '¡Imposible actualizar'
+        })
+    }
+}
+
     
 
    
@@ -36,5 +65,6 @@ const mostraRotacion = async(req,res = response)=>{}
 
 module.exports = {
     crearListado,
-    mostraRotacion
+    mostraRotacion,
+    actualizarRotacion
 }
