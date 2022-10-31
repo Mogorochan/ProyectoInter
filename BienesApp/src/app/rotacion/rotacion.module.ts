@@ -10,6 +10,7 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
+import { ListadoTarjetaComponent } from './components/listado-tarjeta/listado-tarjeta.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
     ListadoComponent,
     ConfirmarComponent,
     AgregarComponent,
-    BuscarComponent
+    BuscarComponent,
+    ListadoTarjetaComponent
   ],
   imports: [
     CommonModule,
