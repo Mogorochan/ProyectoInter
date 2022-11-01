@@ -5,6 +5,7 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { MainComponent } from './pages/main/main.component';
+import { DetalleComponent } from './pages/detalle/detalle.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'agregar', component: AgregarComponent },
       { path: 'editar/:id', component: AgregarComponent },
       { path: 'buscar', component: BuscarComponent },
+      { path: ':id', component: DetalleComponent },
       { path: '**', redirectTo: 'listado' },
     ],
   },

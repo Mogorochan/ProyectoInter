@@ -11,6 +11,7 @@ import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { ListadoTarjetaComponent } from './components/listado-tarjeta/listado-tarjeta.component';
+import { DetalleComponent } from './pages/detalle/detalle.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ListadoTarjetaComponent } from './components/listado-tarjeta/listado-ta
     ConfirmarComponent,
     AgregarComponent,
     BuscarComponent,
-    ListadoTarjetaComponent
+    ListadoTarjetaComponent,
+    DetalleComponent
   ],
   imports: [
     CommonModule,
