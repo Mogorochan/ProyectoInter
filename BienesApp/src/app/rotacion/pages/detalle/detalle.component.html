@@ -1,1 +1,44 @@
-<p>detalle works!</p>
+<mat-grid-list cols="1" *ngIf="!mostraRegistro; else divRegistro"> 
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divRegistro>
+    <div fxLayout="row" 
+    fxLayout.xs="column"
+    fxLayoutAlign="center"
+    fxLayoutGap="30px">
+
+   <div fxFlex="20"
+       fxFlex.lg="15"
+       fxFlex.sm="30">
+       <h2>{{mostraRegistro.periodo}}
+           <small>- {{mostraRegistro.periodo}}</small>
+           <mat-divider></mat-divider>
+       </h2><br>
+       
+   </div>
+
+   <div fxFlex="50">
+       <h2>{{mostraRegistro.periodo}}</h2>
+       <mat-divider></mat-divider>
+
+       <mat-list>
+           <mat-list-item>{{mostraRegistro.periodo}}</mat-list-item>
+           <mat-list-item>{{mostraRegistro.ingreso}}</mat-list-item>
+           <mat-list-item>{{mostraRegistro.retiro}}</mat-list-item>
+           <mat-list-item>{{mostraRegistro.personalInicio}}</mat-list-item>
+           <mat-list-item>{{mostraRegistro.personalFinal}}</mat-list-item>
+           <mat-list-item>{{mostraRegistro.resultado}}</mat-list-item>
+           <mat-list-item>{{mostraRegistro.meta}}</mat-list-item>
+       </mat-list><br>
+       
+       <button mat-button 
+               color="accent"
+               (click)="regresar()">
+           Regresar
+       </button>
+   </div>
+</div>
+</ng-template>
