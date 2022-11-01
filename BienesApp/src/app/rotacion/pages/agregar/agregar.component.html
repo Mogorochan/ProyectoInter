@@ -1,1 +1,82 @@
-<p>agregar works!</p>
+<div class="container"></div>
+<h1>
+  {{ ( objRotacion.id )? 'Editar' : 'Nuevo' }}
+  Registro
+  <small>{{ objRotacion.id }}</small> 
+  <span class="spacer"></span>
+  <button mat-button color="accent" [routerLink]="['rotacion/listado']">
+    Regresar
+  </button>
+</h1>
+
+<div fxLayout="row" 
+     fxLayoutGap="40px" 
+     fxLayout.xs="column">
+
+  <div fxFlex="50" fxLayout="column">
+
+    <div fxLayout="row" 
+         fxLayout.xs="column" 
+         fxLayoutGap="20px">
+
+      <mat-form-field fxFlex="100" fxLayout.xs="column">
+        <mat-label>Periodo</mat-label>
+        <input matInput type="text" [(ngModel)]="objRotacion.periodo"  required />
+      </mat-form-field>
+
+      <mat-form-field fxFlex="100">
+        <mat-label>Ingreso</mat-label>
+        <input matInput type="text" [(ngModel)]="objRotacion.ingreso"  required >
+      </mat-form-field><br>
+   
+
+    <mat-form-field fxFlex="100" fxLayout.xs="column">
+      <mat-label>Retiro</mat-label>
+      <input matInput type="text" [(ngModel)]="objRotacion.retiro">
+    </mat-form-field>
+
+    <mat-form-field fxFlex="100">
+      <mat-label>Personal de inicio</mat-label>
+      <input matInput type="text" [(ngModel)]="objRotacion.personalInicio" >
+    </mat-form-field><br>
+
+    <mat-form-field fxFlex="100" fxLayout.xs="column">
+      <mat-label>Personal final</mat-label>
+      <input matInput type="text" [(ngModel)]="objRotacion.personalFinal" >
+    </mat-form-field>
+
+    <mat-form-field fxFlex="100">
+      <mat-label>Resultado</mat-label>
+      <input matInput type="text" [(ngModel)]="objRotacion.resultado" >
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <mat-label>Meta</mat-label>
+      <input matInput type="text" [(ngModel)]="objRotacion.meta" >
+    </mat-form-field>
+
+  </div>
+
+
+    <div fxLayout>
+        <button mat-raised-button 
+        color="primary"
+        (click)="guardar()">
+        <mat-icon>edit</mat-icon>
+        Guardar
+        </button>
+        <span class="spacer"></span>
+
+        <button *ngIf="objRotacion.id"
+        mat-raised-button
+        (click)="deleteRegistro()"
+        color="warn">
+        <mat-icon>remove</mat-icon>
+          Borrar
+        </button>
+    </div>
+
+  </div>
+
+</div>
+

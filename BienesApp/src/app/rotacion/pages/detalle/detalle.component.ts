@@ -7,7 +7,13 @@ import { RotacionService } from '../../services/rotacion.service';
 @Component({
   selector: 'app-detalle',
   templateUrl: './detalle.component.html',
-  styles: []
+  styles: [
+    `
+    .spacer {
+      flex: auto;
+    }
+  `,
+  ]
 })
 export class DetalleComponent implements OnInit {
 

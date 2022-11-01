@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 //diseño
 import { MaterialModule } from './material/material.module';
 
@@ -28,6 +29,7 @@ import { DetalleComponent } from './pages/detalle/detalle.component';
     CommonModule,
     RotacionRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     MaterialModule
   ]
 })
