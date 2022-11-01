@@ -42,7 +42,7 @@ export class AgregarComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (!this.router.url.includes('editar')) {
+    if (!this.router.url.includes('/editar')) {
       return
     } 
     this.activatedRoute.params
