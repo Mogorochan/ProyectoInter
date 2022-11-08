@@ -1,5 +1,5 @@
 export interface Rotacion {
-    id?:             string;
+    _id?:             string;
     periodo?:        string;
     ingreso?:        number;
     retiro?:         number;

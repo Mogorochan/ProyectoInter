@@ -26,7 +26,7 @@ export class DetalleComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(
-        switchMap(({ id }) => this.rotacionService.getRegistroPorID(id))
+        switchMap(({ _id }) => this.rotacionService.getRegistroPorID(_id))
       )
       .subscribe (registro => this.mostraRegistro = registro);
   }

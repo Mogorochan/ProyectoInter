@@ -17,8 +17,8 @@ export class RotacionService {
     return this.http.get<Rotacion[]>(`${this.baseUrl}/rotacion`);
   }
 
-  getRegistroPorID(id: string): Observable<Rotacion>{
-    return this.http.get<Rotacion>(`${this.baseUrl}/rotacion/${id}`);
+  getRegistroPorID(_id: string): Observable<Rotacion>{
+    return this.http.get<Rotacion>(`${this.baseUrl}/rotacion/${_id}`);
   }
 
   getSugerencias(termino: string): Observable<Rotacion[]>{
@@ -26,15 +26,15 @@ export class RotacionService {
   }
 
   agregarRotacion( rotacion: Rotacion ): Observable<Rotacion> {
-    return this.http.post<Rotacion>(`${ this.baseUrl}/rotacion`, rotacion );
+    return this.http.post<Rotacion>(`${ this.baseUrl}/rotacion/agregar`, rotacion );
   }
 
-  actualizarRegistro(rotacion: Rotacion ): Observable<Rotacion> {
-    return this.http.post<Rotacion>(`${ this.baseUrl}/rotacion/${rotacion.id}`, rotacion);
+  actualizarRegistro(_id: string, rotacion: Rotacion ): Observable<any> {
+    return this.http.put<any>(`${ this.baseUrl}/rotacion/editar/${rotacion._id}`, rotacion);
   }
 
-  deleteRegistro(id: string): Observable<any>{
-    return this.http.delete<any>(`${this.baseUrl}/rotacion/${id}`);
+  deleteRegistro(_id: string): Observable<any>{
+    return this.http.delete<any>(`${this.baseUrl}/rotacion/${_id}`);
   }
 
 

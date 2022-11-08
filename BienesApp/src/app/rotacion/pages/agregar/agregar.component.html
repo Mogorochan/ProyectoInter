@@ -1,8 +1,8 @@
 <div class="container"></div>
-<h1>
-  {{ ( objRotacion.id )? 'Editar' : 'Nuevo' }}
+<h1 class="title">
+  {{ title | uppercase }}
   Registro
-  <small>{{ objRotacion.id }}</small> 
+  <small></small> 
   <span class="spacer"></span>
   <button mat-button color="accent" [routerLink]="['rotacion/listado']">
     Regresar
@@ -21,44 +21,49 @@
 
       <mat-form-field fxFlex="100" fxLayout.xs="column">
         <mat-label>Periodo</mat-label>
-        <input matInput type="text" [(ngModel)]="objRotacion.periodo"  required />
+        <mat-select>
+          <mat-option *ngFor="let options of periodoList"
+                      >{{options}}
+
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field fxFlex="100">
         <mat-label>Ingreso</mat-label>
-        <input matInput type="text" [(ngModel)]="objRotacion.ingreso"  required >
+        <input matInput type="number" formControlName="ingreso"  required >
       </mat-form-field><br>
    
 
     <mat-form-field fxFlex="100" fxLayout.xs="column">
       <mat-label>Retiro</mat-label>
-      <input matInput type="text" [(ngModel)]="objRotacion.retiro">
+      <input matInput type="number"formControlName="retiro">
     </mat-form-field>
 
     <mat-form-field fxFlex="100">
       <mat-label>Personal de inicio</mat-label>
-      <input matInput type="text" [(ngModel)]="objRotacion.personalInicio" >
+      <input matInput type="number"formControlName="personalInicio" >
     </mat-form-field><br>
 
     <mat-form-field fxFlex="100" fxLayout.xs="column">
       <mat-label>Personal final</mat-label>
-      <input matInput type="text" [(ngModel)]="objRotacion.personalFinal" >
+      <input matInput type="number"formControlName="personalFinal" >
     </mat-form-field>
 
     <mat-form-field fxFlex="100">
       <mat-label>Resultado</mat-label>
-      <input matInput type="text" [(ngModel)]="objRotacion.resultado" >
+      <input matInput type="number"formControlName="resultado" >
     </mat-form-field><br>
 
     <mat-form-field>
       <mat-label>Meta</mat-label>
-      <input matInput type="text" [(ngModel)]="objRotacion.meta" >
+      <input matInput type="number"formControlName="meta" >
     </mat-form-field>
 
   </div>
 
 
-    <div fxLayout>
+  <mat-card-actions>
         <button mat-raised-button 
         color="primary"
         (click)="guardar()">
@@ -67,14 +72,14 @@
         </button>
         <span class="spacer"></span>
 
-        <button *ngIf="objRotacion.id"
+        <button 
         mat-raised-button
-        (click)="deleteRegistro()"
+        (click)="deleteRegistro(id)"
         color="warn">
         <mat-icon>remove</mat-icon>
           Borrar
         </button>
-    </div>
+      </mat-card-actions>
 
   </div>
 
